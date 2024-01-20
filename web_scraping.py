@@ -128,4 +128,4 @@ def scrapfyt(url):
   return all_comments, video_title, video_owner, video_comment_with_replies, video_comment_without_replies
 
 
-var = scrapfyt("https://www.youtube.com/watch?v=PzzDVPcToWo")
+#var = scrapfyt("https://www.youtube.com/watch?v=PzzDVPcToWo")
