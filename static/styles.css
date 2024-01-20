@@ -1,0 +1,109 @@
+
+body, h1, h3, table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#scrap_button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loading {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.res_mes {
+    font-weight: bold;
+}
+
+.pos_head {
+    color: #27ae60;
+}
+
+.neg_head {
+    color: #e74c3c;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+
+@media (max-width: 600px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    th, td {
+        white-space: nowrap;
+    }
+}
+
+#loading{
+    margin: 60px;
+    display: none;
+    position: relative;
+  }
+  #loading span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: darkslategray;
+    animation: flip 5s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg)
+    }
+  }
