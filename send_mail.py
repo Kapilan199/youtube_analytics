@@ -9,10 +9,10 @@ from email.mime.text import MIMEText
 def mailsend(emailto):
 
   ## Mail details
-  emailfrom = "@gmail.com"
+  emailfrom = "sentimentanalysiskr@gmail.com"
   fileToSend = ["Full Comments.csv", "Positive Comments.csv", "Negative Comments.csv"]
-  username = "@gmail.com"
-  password = "kajs uebg jsjd idnu"
+  username = "sentimentanalysiskr@gmail.com"
+  password = "xylh djhb yfwp ckgu"
 
   ## Mail Subject
 
