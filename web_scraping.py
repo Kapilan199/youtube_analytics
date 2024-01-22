@@ -45,7 +45,7 @@ def scrapfyt(url):
   chrome_options.add_argument("--mute-audio")
   chrome_options.add_argument("--disable-extensions")
   chrome_options.add_argument('-disable-dev-shm-usage')
-  service = Service(ChromeDriverManager().install())
+  service = Service(ChromeDriverManager(driver_version="2.46").install())
   driver = webdriver.Chrome(service=service, options=chrome_options)
 
 
