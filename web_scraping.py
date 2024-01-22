@@ -36,25 +36,17 @@ def scrapfyt(url):
   # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
 
     # Initialize Chrome WebDriver with the specified options
+  
   chrome_options = Options()
-  # chrome_options.add_argument("--headless")
-  chrome_options.add_argument("--no-sandbox")
-  chrome_options.add_argument("--disable-gpu")
-  chrome_options.add_argument("--disable-extensions")
-  chrome_options.add_argument("--disable-dev-shm-usage")
-  option.binary_location = "/opt/render/project/.render/chrome/opt/google/chrome/google-chrome"
-
-  capabilities = chrome_options.to_capabilities()
-  chrome_options = Options()
-  # chrome_options.add_argument("--headless")
+  chrome_options.add_argument("--headless")
   chrome_options.add_argument('-no-sandbox')
 #   option.add_argument("--disable-infobars")
 #   option.add_argument("--disable-gpu")
   chrome_options.add_argument("--mute-audio")
   chrome_options.add_argument("--disable-extensions")
   chrome_options.add_argument('-disable-dev-shm-usage')
-  service = Service(ChromeDriverManager(driver_version="91.0.4472.101").install())
-  driver = webdriver.Chrome(service=service, desired_capabilities=capabilities)
+  service = Service(ChromeDriverManager().install())
+  driver = webdriver.Chrome(service=service, options=chrome_options)
 
 
   # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
