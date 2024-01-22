@@ -30,7 +30,7 @@
     The application needs the calculated time to scrap the comments of the video.<br/>
     Kindly wait for the process to finish.</h><br>
 </div>
-
+<div style="text-align: center; margin-bottom: 20px;">
     <div id="loading">
     <span style="--i:1">F</span>
     <span style="--i:2">E</span>
@@ -51,24 +51,28 @@
     <span style="--i:17">.</span>
     <span style="--i:18">.</span>
     <span style="--i:19">.</span>
-    <span style="--i:20">.</span></div>
+    <span style="--i:20">.</span></div></div>
 
 
     <br>
+    <div style="text-align: center; margin-bottom: 20px;">
     {% if after_complete_message %}
-        <h3>{{ after_complete_message }}<br><br/>
-            <span class="res_mes"> Video Title:</span>{{ title }}<br/>
-            <span class="res_mes">Video Published by:</span>{{ owner }}<br/>
-            <span class="res_mes">Total Comments including replies:</span>{{ comment_w_replies }}<br/>
-            <span class="res_mes">Total Comments without replies:</span>{{ comment_wo_replies }}<br/>
-            <span class="res_mes">Total Positive Comments:</span>{{ positive_comment }}<br/>
-            <span class="res_mes">Total Negative Comments:</span>{{ negative_comment }}<br></h3>
-            <span class="res_mes">Total Views:</span>{{ views }}<br></h3>
+        <h3 style="color: rgb(134, 197, 207); font-size: 1.5em; margin-bottom: 10px;">{{ after_complete_message }}<br><br/>
+            <span class="res_mes"> Video Title: </span>{{ title }}<br/>
+            <span class="res_mes">Video Published by: </span>{{ owner }}<br/>
+            <span class="res_mes">Total Comments including replies: </span>{{ comment_w_replies }}<br/>
+            <span class="res_mes">Total Comments without replies: </span>{{ comment_wo_replies }}<br/>
+            <span class="res_mes">Total Positive Comments: </span>{{ positive_comment }}<br/>
+            <span class="res_mes">Total Negative Comments: </span>{{ negative_comment }}<br></h3>
     {% endif %}<br>
 
-
+    <div style="overflow-x: auto;">
+        {% if after_complete_message %}
     <h1>Sentiment Analysis Plot</h1>
     <img src="data:image/png;base64,{{ encoded_image }}" alt="Sentiment Analysis Plot">
+    {% endif %}
+    </div>
+
     <div style="overflow-x: auto;">
         {% if after_complete_message %}
             <h3><span class="pos_head">Positive Comments</span></h3>
@@ -94,6 +98,6 @@
             </table><br>
         {% endif %}
     </div>
-
+    </div>
 </body>
 </html>
