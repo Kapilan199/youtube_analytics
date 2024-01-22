@@ -42,6 +42,7 @@ def scrapfyt(url):
   chrome_options.add_argument("--disable-gpu")
   chrome_options.add_argument("--disable-extensions")
   chrome_options.add_argument("--disable-dev-shm-usage")
+  option.binary_location = "/opt/render/project/.render/chrome/opt/google/chrome/google-chrome"
 
   capabilities = chrome_options.to_capabilities()
   chrome_options = Options()
