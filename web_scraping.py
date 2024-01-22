@@ -34,9 +34,9 @@ def scrapfyt(url):
   # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
 
 
-  driver = webdriver.Chrome(options=option)
 
-  # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
+
+  driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
 
   driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
