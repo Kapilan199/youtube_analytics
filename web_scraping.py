@@ -14,9 +14,7 @@ import io
 import pandas as pd
 import numpy as np
 import csv
-import sys
 import os  # For cloud
-import re
 ## function definition
 
 def scrapfyt(url):

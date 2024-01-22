@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request
 import web_scraping, comment_sentiment_analysis, send_mail, delete_files, data_visual
 import pandas as pd
-import matplotlib.pyplot as plt
-from io import BytesIO
-import base64
+
 
 app = Flask(__name__)
 
