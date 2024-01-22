@@ -1,6 +1,5 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
-from email.message import Message
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 import base64

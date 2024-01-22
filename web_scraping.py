@@ -33,7 +33,9 @@ def scrapfyt(url):
 
   # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
 
+  chromedriver_path = os.environ.get("CHROMEDRIVER_PATH", "/path/to/chromedriver")
 
+    # Initialize Chrome WebDriver with the specified options
 
 
   driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
