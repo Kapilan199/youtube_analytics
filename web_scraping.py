@@ -3,6 +3,7 @@
 
 
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -36,9 +37,14 @@ def scrapfyt(url):
   chromedriver_path = os.environ.get("CHROMEDRIVER_PATH", "/path/to/chromedriver")
 
     # Initialize Chrome WebDriver with the specified options
+  
 
 
-  driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
+  service = Service(ChromeDriverManager().install())
+  driver = webdriver.Chrome(service=service)
+
+
+  # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
 
   driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
