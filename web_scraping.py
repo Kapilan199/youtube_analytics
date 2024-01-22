@@ -37,7 +37,7 @@ def scrapfyt(url):
 
     # Initialize Chrome WebDriver with the specified options
   chrome_options = Options()
-  chrome_options.add_argument("--headless")
+  # chrome_options.add_argument("--headless")
   chrome_options.add_argument("--no-sandbox")
   chrome_options.add_argument("--disable-gpu")
   chrome_options.add_argument("--disable-extensions")
@@ -45,7 +45,7 @@ def scrapfyt(url):
 
   capabilities = chrome_options.to_capabilities()
   chrome_options = Options()
-  chrome_options.add_argument("--headless")
+  # chrome_options.add_argument("--headless")
   chrome_options.add_argument('-no-sandbox')
 #   option.add_argument("--disable-infobars")
 #   option.add_argument("--disable-gpu")
