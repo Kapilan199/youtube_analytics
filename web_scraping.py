@@ -3,14 +3,12 @@
 
 
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common import exceptions
-from selenium.webdriver.chrome.options import Options
 import time
 import io
 import pandas as pd
@@ -25,32 +23,17 @@ def scrapfyt(url):
 
   option = webdriver.ChromeOptions()
   option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
-  # option.add_argument('--headless')
-  # option.add_argument('-no-sandbox')
+  option.add_argument('--headless')
+  option.add_argument('-no-sandbox')
 #   option.add_argument("--disable-infobars")
 #   option.add_argument("--disable-gpu")
-  # option.add_argument("--mute-audio")
-  # option.add_argument("--disable-extensions")
-  # option.add_argument('-disable-dev-shm-usage')
+  option.add_argument("--mute-audio")
+  option.add_argument("--disable-extensions")
+  option.add_argument('-disable-dev-shm-usage')
 
   # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
 
-    # Initialize Chrome WebDriver with the specified options
-  
-  chrome_options = Options()
-  chrome_options.add_argument("--headless")
-  chrome_options.add_argument('-no-sandbox')
-#   option.add_argument("--disable-infobars")
-#   option.add_argument("--disable-gpu")
-  chrome_options.add_argument("--mute-audio")
-  chrome_options.add_argument("--disable-extensions")
-  chrome_options.add_argument('-disable-dev-shm-usage')
-  service = Service(ChromeDriverManager().install())
-  driver = webdriver.Chrome(service=service, options=chrome_options)
-
-
-  # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
-
+  driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
   driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
                                         # right side videos recommendations. When in max window,
