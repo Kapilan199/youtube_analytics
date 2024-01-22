@@ -3,10 +3,12 @@ import mimetypes
 from email.mime.multipart import MIMEMultipart
 from email.message import Message
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+import base64
 
 ## Mail Sending function
 
-def mailsend(emailto):
+def mailsend(emailto, encoded_image):
 
   ## Mail details
   emailfrom = "sentimentanalysiskr@gmail.com"
@@ -19,7 +21,7 @@ def mailsend(emailto):
   msg = MIMEMultipart()
   msg["From"] = emailfrom
   msg["To"] = emailto
-  msg["Subject"] = "Hi your youtube comments excel file is here   -Youtube Comment Scraper"
+  msg["Subject"] = "Hi your youtube comments excel file and graphs are here   -Youtube Comment Scraper"
   # msg.preamble = "Hi your csv file is ready from  -Youtube Comment Scraper"
 
   ## Adding attachments
@@ -31,6 +33,13 @@ def mailsend(emailto):
     fp.close()
     attachment.add_header("Content-Disposition", "attachment", filename=f)
     msg.attach(attachment)
+
+
+
+    image_data = base64.b64decode(encoded_image)
+    image_attachment = MIMEImage(image_data, name='image.png')
+    image_attachment.add_header('Content-ID', '<inline-image>')
+    msg.attach(image_attachment)
 
   ## Sending mail to the user
 

@@ -5,6 +5,8 @@ import base64
 
 
 def plot(positive_comments,negative_comments):
+
+    # Data
     categories = ['Positive Comments', 'Negative Comments']
     counts = [positive_comments, negative_comments]
 
@@ -18,5 +20,4 @@ def plot(positive_comments,negative_comments):
     image_stream = BytesIO()
     plt.savefig(image_stream, format='png')
     image_stream.seek(0)
-    encoded_image = base64.b64encode(image_stream.read()).decode('utf-8')
-    return encoded_image
+    return base64.b64encode(image_stream.read()).decode('utf-8')

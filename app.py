@@ -22,10 +22,9 @@ def scrap_comments():
 # 2. takes the files and analyzes it and return the list positive and negative comments and the number of each.
     sentiment = comment_sentiment_analysis.sepposnegcom("Full Comments.csv")
 
-# 3. send the csv created by the sentiment file to the given email id
-    send_mail.mailsend(emailto)
 
-# 4. converting to list and formating
+
+# 3. converting to list and formating
     list_file_and_detail = list(file_and_detail)
     list_sentiment = list(sentiment)
     print(list_file_and_detail)
@@ -35,28 +34,29 @@ def scrap_comments():
     neg_comments_csv = pd.read_csv('Negative Comments.csv')
 
 
+    numeric_part = ''.join(filter(str.isdigit, video_posive_comments))
+    # Convert the numeric part to an integer
+    positive_number = int(numeric_part)
+    numeric_part = ''.join(filter(str.isdigit, video_negative_comments))
+    # Convert the numeric part to an integer
+    negative_number = int(numeric_part)
+
+    encoded_image = data_visual.plot(positive_number, negative_number)
+    # Render template with the encoded image
+
+
+# 4. send the csv created by the sentiment file to the given email id
+    send_mail.mailsend(emailto, encoded_image)
+
+
+
 #  5. delete the comment files because we dont need them anymore
     delete_files.file_delete()
 
     after_complete_message = "Your file is ready and sent to your mail id"
 
 
-
-
-    numeric_part = ''.join(filter(str.isdigit, video_posive_comments))
-
-    # Convert the numeric part to an integer
-    positive_number = int(numeric_part)
-
-
-
-    numeric_part = ''.join(filter(str.isdigit, video_negative_comments))
-
-    # Convert the numeric part to an integer
-    negative_number = int(numeric_part)
-
-    encoded_image = data_visual.plot(positive_number, negative_number)
-    # Render template with the encoded image
+  
 
 
     return render_template("index.html",after_complete_message = after_complete_message, title = video_title,
