@@ -16,7 +16,7 @@ import numpy as np
 import csv
 import sys
 import os  # For cloud
-
+import re
 ## function definition
 
 def scrapfyt(url):
@@ -97,7 +97,9 @@ def scrapfyt(url):
 
   comments = driver.find_elements(By.XPATH, '//*[@id="content-text"]')
 
-  
+ 
+
+
   print(comments)
 
   with io.open('comments.csv', 'w', newline='', encoding="utf-16") as file:
