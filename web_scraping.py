@@ -58,7 +58,7 @@ def scrapfyt(url):
 
   ## Pause youtube video
 
-  pause = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, 'ytp-play-button')))
+  pause = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CLASS_NAME, 'ytp-play-button')))
 
   pause.click()
   time.sleep(0.2)
