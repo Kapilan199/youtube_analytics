@@ -36,7 +36,7 @@ def scrapfyt(url):
 
 #   driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
-
+  uc.__version__
   options = uc.ChromeOptions()
   options.add_argument("enable-automation")
   options.add_argument("--no-sandbox")
@@ -44,7 +44,7 @@ def scrapfyt(url):
   options.add_argument("--dns-prefetch-disable")
   options.add_argument("--disable-gpu")
 
-  driver = uc.Chrome(options=options, version_main=120, enable_cdp_events=True, headless=True)
+  driver = uc.Chrome(options=options, enable_cdp_events=True, headless=True)
 
   driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
                                         # right side videos recommendations. When in max window,
