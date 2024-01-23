@@ -21,24 +21,37 @@ def scrapfyt(url):
 
   ## Opening chrome and url
 
-  option = webdriver.ChromeOptions()
-  option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
-  option.add_argument('--headless')
-  option.add_argument('-no-sandbox')
-#   option.add_argument("--disable-infobars")
-#   option.add_argument("--disable-gpu")
-  option.add_argument("--mute-audio")
-  option.add_argument("--disable-extensions")
-  option.add_argument('-disable-dev-shm-usage')
+  # option = webdriver.ChromeOptions()
+  # option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
+  # option.add_argument('--headless')
+  # option.add_argument('-no-sandbox')
+  # option.add_argument("--mute-audio")
+  # option.add_argument("--disable-extensions")
+  # option.add_argument('-disable-dev-shm-usage')
 
-  # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
 
-  driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
+  # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
-  driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
-                                        # right side videos recommendations. When in max window,
-                                        # while scrolling comments, it cannot be able to load correctly
-                                        # due to the video recommendations in the right side.
+  # driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
+
+
+
+
+
+  options = webdriver.ChromeOptions()
+  options.add_argument('--no-sandbox')
+  options.add_argument('--headless')
+  options.add_argument('--ignore-certificate-errors')
+  options.add_argument('--disable-dev-shm-usage')
+  options.add_argument('--disable-extensions')
+  options.add_argument('--disable-gpu')
+
+  driver = webdriver.Chrome(options=options)
+  driver.set_page_load_timeout(90)
+
+  # Load the URL and get the page source
+  driver.implicitly_wait(6)
+
   time.sleep(1)
   driver.get(url)
   time.sleep(2)
