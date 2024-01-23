@@ -25,13 +25,13 @@ def scrapfyt(url):
   ## Opening chrome and url
 
   option = webdriver.ChromeOptions()
-  option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
+  # option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
   option.add_argument('-no-sandbox')
   option.add_argument('--headless')
   option.add_argument("--mute-audio")
   option.add_argument("--disable-extensions")
   option.add_argument('-disable-dev-shm-usage')
-
+  option.binary_location = "/opt/render/project/.render/chrome/opt/google/chrome/"
 
   # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
