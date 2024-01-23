@@ -15,25 +15,36 @@ import pandas as pd
 import numpy as np
 import csv
 import os  # For cloud
+import undetected_chromedriver as uc
 ## function definition
 
 def scrapfyt(url):
 
   ## Opening chrome and url
 
-  option = webdriver.ChromeOptions()
-  option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
-  option.add_argument('--headless')
-  option.add_argument('-no-sandbox')
-#   option.add_argument("--disable-infobars")
-#   option.add_argument("--disable-gpu")
-  option.add_argument("--mute-audio")
-  option.add_argument("--disable-extensions")
-  option.add_argument('-disable-dev-shm-usage')
+#   option = webdriver.ChromeOptions()
+#   option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
+#   option.add_argument('--headless')
+#   option.add_argument('-no-sandbox')
+# #   option.add_argument("--disable-infobars")
+# #   option.add_argument("--disable-gpu")
+#   option.add_argument("--mute-audio")
+#   option.add_argument("--disable-extensions")
+#   option.add_argument('-disable-dev-shm-usage')
 
-  # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
+#   # driver = webdriver.Chrome(service=Service("C:/chrome extension/chromedriver.exe"), options=option) # For testing in windows
 
-  driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
+#   driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
+
+
+  options = uc.ChromeOptions()
+  options.add_argument("enable-automation")
+  options.add_argument("--no-sandbox")
+  options.add_argument("--disable-extensions")
+  options.add_argument("--dns-prefetch-disable")
+  options.add_argument("--disable-gpu")
+
+  driver = uc.Chrome(options=options, version_main=113, enable_cdp_events=True, headless=True)
 
   driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
                                         # right side videos recommendations. When in max window,
