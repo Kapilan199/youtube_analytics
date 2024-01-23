@@ -39,7 +39,7 @@ def scrapfyt(url):
 
 
   service = Service(ChromeDriverManager().install())
-  driver = webdriver.Chrome(service=service)
+  driver = webdriver.Chrome(service=service,options=option)
 
   driver.set_page_load_timeout(90)
 
