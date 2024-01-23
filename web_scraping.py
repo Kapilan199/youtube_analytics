@@ -44,7 +44,7 @@ def scrapfyt(url):
   options.add_argument("--dns-prefetch-disable")
   options.add_argument("--disable-gpu")
 
-  driver = uc.Chrome(options=options, version_main=113, enable_cdp_events=True, headless=True)
+  driver = uc.Chrome(options=options, version_main=120, enable_cdp_events=True, headless=True)
 
   driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
                                         # right side videos recommendations. When in max window,
