@@ -16,6 +16,9 @@ import numpy as np
 import csv
 import os  # For cloud
 ## function definition
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+
 
 def scrapfyt(url):
 
@@ -35,18 +38,9 @@ def scrapfyt(url):
   # driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
 
 
+  service = Service(ChromeDriverManager().install())
+  driver = webdriver.Chrome(service=service)
 
-
-
-  options = webdriver.ChromeOptions()
-  options.add_argument('--no-sandbox')
-  options.add_argument('--headless')
-  options.add_argument('--ignore-certificate-errors')
-  options.add_argument('--disable-dev-shm-usage')
-  options.add_argument('--disable-extensions')
-  options.add_argument('--disable-gpu')
-
-  driver = webdriver.Chrome(options=options)
   driver.set_page_load_timeout(90)
 
   # Load the URL and get the page source
