@@ -391,7 +391,7 @@ def sepposnegcom(comment_file):
         video_positive_comments = '0 Comments'
     if (pd.read_csv('0.csv', nrows=0).columns.tolist())[0] == 'Empty':
         video_negative_comments = '0 Comments'
-
+    print("testing full comments")
     print(positive_comments, negative_comments, video_positive_comments, video_negative_comments)    
 
     ## return function
