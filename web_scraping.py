@@ -58,11 +58,6 @@ def scrapfyt(url):
 
     time.sleep(4)
 
-    # pause.click()
-    # time.sleep(0.2)
-    # pause.click()
-    # time.sleep(4)
-
     ## Scrolling through all the comments
 
     # Initial Scroll
@@ -132,8 +127,6 @@ def scrapfyt(url):
     ## Close driver
 
     driver.close()
-
-
  
     return all_comments, video_title, video_owner, video_comment_with_replies, video_comment_without_replies
 

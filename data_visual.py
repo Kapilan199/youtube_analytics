@@ -21,3 +21,4 @@ def plot(positive_comments,negative_comments):
     plt.savefig(image_stream, format='png')
     image_stream.seek(0)
     return base64.b64encode(image_stream.read()).decode('utf-8')
+
