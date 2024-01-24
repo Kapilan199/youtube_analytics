@@ -670,6 +670,9 @@ def scrap_comments():
     positive_comments = dataset[dataset['vader_sentiment'] == 1]
     negative_comments = dataset[dataset['vader_sentiment'] == 0]
 
+    positive_comments.to_csv("Positive_Comments.csv", index=False)
+    negative_comments.to_csv("Negative_Comments.csv", index=False)
+
     print("check 4")
     print(positive_comments)
 
@@ -812,7 +815,7 @@ def scrap_comments():
 
 #  5. delete the comment files because we dont need them anymore
     # file_delete()
-    file_to_delete = ["0.csv", "1.csv", "comments.csv", "Full_Comments.csv", "Positive_Comments.csv", "Negative_Comments.csv"]
+    file_to_delete = ["comments.csv", "Full_Comments.csv", "Positive_Comments.csv", "Negative_Comments.csv"]
 
     for f in file_to_delete:
         os.remove(f)
