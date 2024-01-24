@@ -76,3 +76,17 @@ def test():
     with open("test.txt", 'r') as f:
         c = f.readlines()
     return c
+
+@app.route('/test1')
+def test():
+    # Create a CSV file
+    data = {'Name': ['John', 'Jane', 'Bob'], 'Age': [25, 30, 22]}
+    df = pd.DataFrame(data)
+    df.to_csv('test.csv', index=False)
+
+    # Read the CSV file
+    read_df = pd.read_csv('test.csv')
+
+    # Return the content of the CSV file
+    print(read_df)
+    return read_df.to_html()
