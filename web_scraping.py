@@ -126,7 +126,9 @@ def scrapfyt(url):
   ##total comments without replies
   video_comment_without_replies = str(len(commentsfile.axes[0])) + ' Comments'
 
-  # print(video_title, video_owner, video_comment_with_replies, video_comment_without_replies)
+  print("File checking contents:")
+  print(video_title, video_owner, video_comment_with_replies, video_comment_without_replies)
+  print("File checking contents:")
 
   ## Close driver
 
