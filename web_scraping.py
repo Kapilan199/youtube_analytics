@@ -52,8 +52,6 @@ def scrapfyt(url):
   options.add_argument('--disable-extensions')
   options.add_argument('--disable-gpu')
 
-  driver = webdriver.Chrome(options=options)
-
   driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
 
 
