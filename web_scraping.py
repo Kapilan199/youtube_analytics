@@ -4,11 +4,13 @@
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common import exceptions
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 import io
 import pandas as pd
@@ -18,32 +20,6 @@ import os  # For cloud
 ## function definition
 
 def scrapfyt(url):
-
-  ## Opening chrome and url
-
-  # option = webdriver.ChromeOptions()
-  # option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
-  # option.add_argument('--headless')
-  # option.add_argument('-no-sandbox')
-  # option.add_argument("--mute-audio")
-  # option.add_argument("--disable-extensions")
-  # option.add_argument('-disable-dev-shm-usage')
-
-
-  # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
-
-  # driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
-
-
-
-
-
- 
-
-
-  from selenium import webdriver
-  from selenium.webdriver.chrome.service import Service
-  from webdriver_manager.chrome import ChromeDriverManager
 
   options = webdriver.ChromeOptions()
   options.add_argument('--no-sandbox')
@@ -72,10 +48,20 @@ def scrapfyt(url):
 
   pause = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CLASS_NAME, 'ytp-play-button')))
 
-  pause.click()
-  time.sleep(0.2)
-  pause.click()
+# Move to the element before clicking
+  ActionChains(driver).move_to_element(pause).click().perform()
+
+  time.sleep(2.2)
+
+# Move to the element before clicking again
+  ActionChains(driver).move_to_element(pause).click().perform()
+
   time.sleep(4)
+
+  # pause.click()
+  # time.sleep(0.2)
+  # pause.click()
+  # time.sleep(4)
 
   ## Scrolling through all the comments
 
