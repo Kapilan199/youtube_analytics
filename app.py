@@ -30,6 +30,10 @@ def scrap_comments():
     pos_comments_csv, neg_comments_csv, video_posive_comments, video_negative_comments = list_sentiment
     pos_comments_csv = pd.read_csv('Positive Comments.csv')
     neg_comments_csv = pd.read_csv('Negative Comments.csv')
+    print("File checking contents:")
+    print(pos_comments_csv)
+    print(neg_comments_csv)
+    print("File checking contents:")
 
 
     numeric_part = ''.join(filter(str.isdigit, video_posive_comments))
