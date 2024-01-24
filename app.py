@@ -635,7 +635,8 @@ def scrap_comments():
         return 1
 
     dataset['vader_sentiment'] = dataset['Comment'].apply(lambda x : vader_sentiment_result(x))
-
+    print("checking 1")
+    print(dataset)
     ## Separating Positive and Negative Comments
 
     for (sentiment), group in dataset.groupby(['vader_sentiment']):
