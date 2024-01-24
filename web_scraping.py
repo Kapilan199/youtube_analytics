@@ -129,7 +129,7 @@ def scrapfyt(url):
  
   print(video_title, video_owner, video_comment_with_replies, video_comment_without_replies)
   print(commentsfile)
-  test = pd.read_csv("Full_Comments.csv", encoding ="utf-16") 
+  test = pd.read_csv("Full_Comments.csv") 
   print(test)
 
   ## Close driver
