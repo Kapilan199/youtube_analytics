@@ -10,7 +10,7 @@ def mailsend(emailto, encoded_image):
 
   ## Mail details
   emailfrom = "sentimentanalysiskr@gmail.com"
-  fileToSend = ["Full Comments.csv", "Positive Comments.csv", "Negative Comments.csv"]
+  fileToSend = ["Full_Comments.csv", "Positive_Comments.csv", "Negative_Comments.csv"]
   username = "sentimentanalysiskr@gmail.com"
   password = "xylh djhb yfwp ckgu"
 

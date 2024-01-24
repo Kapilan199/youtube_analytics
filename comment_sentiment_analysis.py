@@ -63,8 +63,8 @@ def sepposnegcom(comment_file):
     pos = (pd.read_csv("1.csv", engine = 'python')).iloc[:, :-1]
     neg = (pd.read_csv("0.csv", engine = 'python')).iloc[:, :-1]
 
-    positive_comments = pos.to_csv("Positive Comments.csv", index=False)
-    negative_comments = neg.to_csv("Negative Comments.csv",index=False)
+    positive_comments = pos.to_csv("Positive_Comments.csv", index=False)
+    negative_comments = neg.to_csv("Negative_Comments.csv",index=False)
 
     video_positive_comments = str(len(pos.axes[0])) + ' Comments'  #Finding total rows in positive comments
     video_negative_comments = str(len(neg.axes[0])) + ' Comments'  #Finding total rows in negative comments

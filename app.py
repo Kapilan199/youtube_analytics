@@ -18,7 +18,7 @@ def scrap_comments():
     file_and_detail = web_scraping.scrapfyt(url)
 
 # 2. takes the files and analyzes it and return the list positive and negative comments and the number of each.
-    sentiment = comment_sentiment_analysis.sepposnegcom("Full Comments.csv")
+    sentiment = comment_sentiment_analysis.sepposnegcom("Full_Comments.csv")
 
 
 
@@ -28,8 +28,8 @@ def scrap_comments():
     print(list_file_and_detail)
     video_title, video_owner, video_comment_with_replies, video_comment_without_replies = list_file_and_detail[1:]
     pos_comments_csv, neg_comments_csv, video_posive_comments, video_negative_comments = list_sentiment
-    pos_comments_csv = pd.read_csv('Positive Comments.csv')
-    neg_comments_csv = pd.read_csv('Negative Comments.csv')
+    pos_comments_csv = pd.read_csv('Positive_Comments.csv')
+    neg_comments_csv = pd.read_csv('Negative_Comments.csv')
     print("File checking contents:")
     print(pos_comments_csv)
     print(neg_comments_csv)

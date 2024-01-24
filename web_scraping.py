@@ -120,20 +120,20 @@ def scrapfyt(url):
   commentsfile = pd.read_csv("comments.csv", encoding ="utf-16")  # , encoding ="utf-16", engine = 'python'
 
   all_comments = commentsfile.replace(np.nan, '-', regex = True)
-  all_comments = all_comments.to_csv("Full Comments.csv", index = False)
+  all_comments = all_comments.to_csv("Full_Comments.csv", index = False)
   # comments.to_html("Comments2.html")
 
   ##total comments without replies
   video_comment_without_replies = str(len(commentsfile.axes[0])) + ' Comments'
 
-  print("File checking contents:")
+ 
   print(video_title, video_owner, video_comment_with_replies, video_comment_without_replies)
-  print("File checking contents:")
+
 
   ## Close driver
 
   driver.close()
-
+ 
   # print("Scraping is finished")
 
   ## return fuction
