@@ -613,7 +613,7 @@ def scrap_comments():
  ## Reading Dataset
 
     dataset = pd.read_csv("Full_Comments.csv", encoding_errors = 'ignore')
-    print("check 1")
+    print("check 2")
     print(dataset)
     dataset = dataset.iloc[:, 0:]
 
@@ -659,9 +659,15 @@ def scrap_comments():
     
     pos = (pd.read_csv("1.csv", engine = 'python')).iloc[:, :-1]
     neg = (pd.read_csv("0.csv", engine = 'python')).iloc[:, :-1]
+     
+    print("check 3")
+    print(pos)
 
     positive_comments = pos.to_csv("Positive_Comments.csv", index=False)
     negative_comments = neg.to_csv("Negative_Comments.csv",index=False)
+
+    print("check 4")
+    print(positive_comments)
 
     video_positive_comments = str(len(pos.axes[0])) + ' Comments'  #Finding total rows in positive comments
     video_negative_comments = str(len(neg.axes[0])) + ' Comments'  #Finding total rows in negative comments
