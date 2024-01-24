@@ -734,6 +734,8 @@ def scrap_comments():
     print(list_file_and_detail)
     video_title, video_owner, video_comment_with_replies, video_comment_without_replies = list_file_and_detail[1:]
     pos_comments_csv, neg_comments_csv, video_posive_comments, video_negative_comments = list_sentiment
+    pos_comments_csv = pd.read_csv('Positive_Comments.csv')
+    neg_comments_csv = pd.read_csv('Negative_Comments.csv')
     print("File checking contents:")
     print(list_sentiment)
     print("File checking contents:")
