@@ -52,9 +52,11 @@ def scrapfyt(url):
   options.add_argument('--disable-extensions')
   options.add_argument('--disable-gpu')
 
-  driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+  # Install ChromeDriver and get its path
+  chromedriver_path = ChromeDriverManager().install()
 
-
+  # Initialize Chrome WebDriver with options
+  driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
 
 
   driver.set_page_load_timeout(90)
