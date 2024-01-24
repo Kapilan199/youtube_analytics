@@ -69,3 +69,10 @@ def scrap_comments():
 
 # if __name__ == "app":
 #     app.run()
+@app.route('/test')
+def test():
+    with open("test.txt", 'w') as f:
+        f.write("test")
+    with open("test.txt", 'r') as f:
+        c = f.readlines()
+    return c
