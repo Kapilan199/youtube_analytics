@@ -42,6 +42,7 @@ def scrapfyt(url):
 
 
   from selenium import webdriver
+  from selenium.webdriver.chrome.service import Service
   from webdriver_manager.chrome import ChromeDriverManager
 
   options = webdriver.ChromeOptions()
@@ -56,10 +57,9 @@ def scrapfyt(url):
   chromedriver_path = ChromeDriverManager().install()
 
   # Initialize Chrome WebDriver with options
-  driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+  service = Service(chromedriver_path)
+  driver = webdriver.Chrome(service=service, options=options)
 
-
-  driver.set_page_load_timeout(90)
 
   # Load the URL and get the page source
   driver.implicitly_wait(6)
