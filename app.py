@@ -77,8 +77,8 @@ def test():
         c = f.readlines()
     return c
 
-@app.route('/test1')
-def test():
+@app.route('/testt')
+def testt():
     # Create a CSV file
     data = {'Name': ['John', 'Jane', 'Bob'], 'Age': [25, 30, 22]}
     df = pd.DataFrame(data)
