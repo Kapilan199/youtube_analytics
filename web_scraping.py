@@ -16,31 +16,37 @@ import numpy as np
 import csv
 import os  # For cloud
 ## function definition
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
-
 
 def scrapfyt(url):
 
   ## Opening chrome and url
 
-  option = webdriver.ChromeOptions()
+  # option = webdriver.ChromeOptions()
   # option.binary_location =  str(os.environ.get("GOOGLE_CHROME_BIN"))  # For cloud
-  option.add_argument('-no-sandbox')
-  option.add_argument('--headless')
-  option.add_argument("--mute-audio")
-  option.add_argument("--disable-extensions")
-  option.add_argument('-disable-dev-shm-usage')
-  option.binary_location = "/opt/render/project/.render/chrome/opt/google/chrome/"
+  # option.add_argument('--headless')
+  # option.add_argument('-no-sandbox')
+  # option.add_argument("--mute-audio")
+  # option.add_argument("--disable-extensions")
+  # option.add_argument('-disable-dev-shm-usage')
+
 
   # driver = webdriver.Chrome(service = Service(executable_path = os.environ.get("CHROMEDRIVER_PATH")), options = option)  # For cloud
 
   # driver.set_window_size(960, 800)      # minimizing window to optimum because of youtube design of
 
 
-  service = Service(ChromeDriverManager().install())
-  driver = webdriver.Chrome(service=service,options=option)
 
+
+
+  options = webdriver.ChromeOptions()
+  options.add_argument('--no-sandbox')
+  options.add_argument('--headless')
+  options.add_argument('--ignore-certificate-errors')
+  options.add_argument('--disable-dev-shm-usage')
+  options.add_argument('--disable-extensions')
+  options.add_argument('--disable-gpu')
+
+  driver = webdriver.Chrome(options=options)
   driver.set_page_load_timeout(90)
 
   # Load the URL and get the page source
