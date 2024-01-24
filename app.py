@@ -565,6 +565,7 @@ def scrap_comments():
 
     
     print(video_title, video_owner, video_comment_with_replies, video_comment_without_replies)
+    print("check 1")
     test = pd.read_csv("Full_Comments.csv") 
     print(test)
 
@@ -612,6 +613,8 @@ def scrap_comments():
  ## Reading Dataset
 
     dataset = pd.read_csv("Full_Comments.csv", encoding_errors = 'ignore')
+    print("check 1")
+    print(dataset)
     dataset = dataset.iloc[:, 0:]
 
     ## Getting Full Comments to csv file
