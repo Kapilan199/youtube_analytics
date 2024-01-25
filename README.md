@@ -27,6 +27,9 @@ This project is a YouTube comment sentiment analyzer that utilizes Selenium for 
 7. **Email Notification:**
    - The project allows users to enter their email address. Once the sentiment analysis is complete, all CSV files, the Matplotlib graph, and the HTML webpage are sent to the specified email address.
 
+## Images
+
+
 ## Usage
 
 1. **Setup:**
@@ -41,11 +44,13 @@ This project is a YouTube comment sentiment analyzer that utilizes Selenium for 
 4. **Access Results:**
    - Once the analysis is complete, check your email for the CSV files, Matplotlib graph, and a link to the HTML webpage.
 
-## Dependencies
+## Main Dependencies
 
 - Selenium
 - NLTK
 - Matplotlib
+- smtplib
+
 
 ## Note
 
